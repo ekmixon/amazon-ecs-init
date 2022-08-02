@@ -19,7 +19,7 @@ with open("coverprofile.out") as f:
     for line in f:
         if line.startswith("total:"):
             splitline = line.split()
-            print("Total unit test coverage: " + splitline[2])
+            print(f"Total unit test coverage: {splitline[2]}")
             coverage = float(splitline[2].rstrip("%"))
             if coverage < MINIMUM_TEST_COVERAGE:
                 raise BaseException(
